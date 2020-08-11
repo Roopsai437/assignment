@@ -3,13 +3,20 @@ package org.dxctraining.service;
 
 import java.util.List;
 
+
+
 import org.dxctraining.dao.Dao;
 import org.dxctraining.dao.DaoImpl;
 import org.dxctraining.entites.Customer;
 import org.dxctraining.exceptions.InvalidArgumentException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ServiceImpl implements Service {
-	private Dao dao=new DaoImpl();
+	@Autowired
+	private Dao dao ;
+
 	
 	@Override
 	public Customer findById(String id) {

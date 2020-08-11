@@ -5,11 +5,13 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import org.dxctraining.entites.Customer;
 import org.dxctraining.exceptions.CustomerNotFoundException;
 
-
+@Repository
 
 public class DaoImpl implements Dao {
 	private Map<String, Customer> store = new HashMap<>();

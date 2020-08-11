@@ -2,6 +2,8 @@ package org.dxctraining.ui;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+
 import org.dxctraining.entites.Authour;
 import org.dxctraining.entites.Book;
 import org.dxctraining.entites.Fictionalbook;
@@ -10,14 +12,14 @@ import org.dxctraining.exceptions.BookNotFoundException;
 import org.dxctraining.exceptions.InvalidArgumentException;
 import org.dxctraining.service.Service;
 import org.dxctraining.service.ServiceImpl;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+@Component
 public class BookUi {
-	private Service service = new ServiceImpl();
-	public static void main(String args[]) {
-		BookUi r=new BookUi();
-		r.runapp();
-	
-	}
+	   @Autowired
+	    private Service service;
+
+	    @PostConstruct
 	private void runapp() {
 		try {
 		Authour author1=new Authour(1,"suppu");

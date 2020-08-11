@@ -1,6 +1,11 @@
 package org.dxctraining.ui;
 
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
+import javax.annotation.PostConstruct;
+import java.util.List;
 
 
 
@@ -10,13 +15,12 @@ import org.dxctraining.exceptions.InvalidArgumentException;
 import org.dxctraining.service.Service;
 import org.dxctraining.service.ServiceImpl;
 
+@Component
 public class HotelUi {
-	private Service service = new ServiceImpl();
-	public static void main(String args[]) {
-		HotelUi r=new HotelUi();
-		r.runapp();
-	
-	}
+	@Autowired
+    private Service service;
+
+	 @PostConstruct
 	private void runapp() {
 		try {
 			Customer cust1 = new Customer("c1","subash", 8000);

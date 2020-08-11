@@ -2,14 +2,21 @@ package org.dxctraining.service;
 
 
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 
 import org.dxctraining.dao.Dao;
 import org.dxctraining.dao.DaoImpl;
 import org.dxctraining.entites.Book;
 import org.dxctraining.exceptions.InvalidArgumentException;
 
+@Service
 public class ServiceImpl implements Service {
-	private Dao dao=new DaoImpl();
+	
+	@Autowired
+	private Dao dao ;
+
 	
 	@Override
 	public Book displaybook(String id) {
